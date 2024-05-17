@@ -1,0 +1,10 @@
+class Solution(object):
+    def kidsWithCandies(self, candies, extraCandies):
+        maxNum = max(candies)
+        finalResult = []
+        for i in candies:
+            finalResult.append(i+extraCandies >= maxNum)
+        return finalResult
+
+
+print(Solution().kidsWithCandies([2,3,5,1,3],3))
