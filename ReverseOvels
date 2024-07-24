@@ -1,0 +1,37 @@
+class Solution:
+    def reverseVowels(self) -> str:
+        s = ".a"
+        s = list(s)
+        first = 0
+        second = len(s)-1
+
+        ovelsList = ["i", "e", "a", "o", "u", "A", "E", "I", "O", "U"]
+
+        while second <= len(s)-1:
+            print(second , " ", first)
+            if len(s) == 2:
+                if s[first] in ovelsList and s[second] in ovelsList:
+                    s[first],s[second] = s[second],s[first]
+                    break
+                else:
+                    break
+            if s[first] in ovelsList and s[second] in ovelsList:
+                s[first],s[second] = s[second],s[first]
+                second = second -1
+                first = first +1
+            if s[first] in ovelsList and s[second] not in ovelsList:
+                second = second -1
+            if s[second] in ovelsList and s[first] not in ovelsList:
+                first = first +1
+            if  s[first] not in ovelsList and s[second] not in ovelsList:
+                second = second -1
+                first = first +1
+            if first>second:
+                break
+
+
+        print("".join(s))
+
+if __name__=="__main__":
+    obj = Solution()
+    obj.reverseVowels()
